@@ -1,27 +1,35 @@
 # MyCordovaApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+$ng new myCorovaApp
+$ng build --prod
 
-## Development server
+$Cordova create mobile
+$cd mobile
+/mobile $Cordova platform add android
+/mobile $ Cordova run android
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+index.html 
+Add . in href like below
+<base href="./">
 
-## Code scaffolding
+Add Cordova link in the body
+<script type="text/javascript" src="cordova.js"></script>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+$ng build --prod
 
-## Build
+Angular.json
+"architect" node, change the following from - to
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+"outputPath": "dist/myCordovaApp",
+"outputPath": "dist",
 
-## Running unit tests
+$ng build --prod
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Now go to /mobile/www folder 
+Delete folders css, img, js and index.html file
 
-## Running end-to-end tests
+Copy all files from Dist and copy it to /mobile/www
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Connect your mobile and run below command
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+/mobile $ Cordova run android
